@@ -15,8 +15,9 @@
  */
 
 module "project_services" {
-  source                      = "terraform-google-modules/project-factory/google//modules/project_services"
-  version                     = "~> 15.0"
+  # source                      = "terraform-google-modules/project-factory/google//modules/project_services"
+  # version                     = "~> 15.0"
+  source = "./modules/project_services"
   disable_services_on_destroy = var.disable_services_on_destroy
 
   project_id = var.project_id
@@ -45,15 +46,15 @@ resource "random_id" "unique_id" {
 }
 
 locals {
-  bucket_main_name   = var.unique_names ? "summary-main-${var.project_id}-${random_id.unique_id.hex}" : "summary-main-${var.project_id}"
-  bucket_docs_name   = var.unique_names ? "summary-docs-${var.project_id}-${random_id.unique_id.hex}" : "summary-docs-${var.project_id}"
-  webhook_name       = var.unique_names ? "summary-webhook-${random_id.unique_id.hex}" : "summary-webhook"
-  webhook_sa_name    = var.unique_names ? "summary-webhook-sa-${random_id.unique_id.hex}" : "summary-webhook-sa"
-  artifact_repo_name = var.unique_names ? "summary-artifact-repo-${random_id.unique_id.hex}" : "summary-artifact-repo"
-  trigger_name       = var.unique_names ? "summary-trigger-${random_id.unique_id.hex}" : "summary-trigger"
-  trigger_sa_name    = var.unique_names ? "summary-trigger-sa-${random_id.unique_id.hex}" : "summary-trigger-sa"
-  ocr_processor_name = var.unique_names ? "summary-ocr-processor-${random_id.unique_id.hex}" : "summary-ocr-processor"
-  bq_dataset_name    = var.unique_names ? "summary_dataset_${random_id.unique_id.hex}" : "summary_dataset"
+  bucket_main_name   = var.unique_names ? "zionai-summary-main-${var.project_id}-${random_id.unique_id.hex}" : "summary-main-${var.project_id}"
+  bucket_docs_name   = var.unique_names ? "zionai-summary-docs-${var.project_id}-${random_id.unique_id.hex}" : "summary-docs-${var.project_id}"
+  webhook_name       = var.unique_names ? "zionai-summary-webhook-${random_id.unique_id.hex}" : "summary-webhook"
+  webhook_sa_name    = var.unique_names ? "zionai-summary-webhook-sa-${random_id.unique_id.hex}" : "summary-webhook-sa"
+  artifact_repo_name = var.unique_names ? "zionai-summary-artifact-repo-${random_id.unique_id.hex}" : "summary-artifact-repo"
+  trigger_name       = var.unique_names ? "zionai-summary-trigger-${random_id.unique_id.hex}" : "summary-trigger"
+  trigger_sa_name    = var.unique_names ? "zionai-summary-trigger-sa-${random_id.unique_id.hex}" : "summary-trigger-sa"
+  ocr_processor_name = var.unique_names ? "zionai-summary-ocr-processor-${random_id.unique_id.hex}" : "summary-ocr-processor"
+  bq_dataset_name    = var.unique_names ? "zionai-summary_dataset_${random_id.unique_id.hex}" : "summary_dataset"
 }
 
 #-- Cloud Storage buckets --#
