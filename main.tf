@@ -54,7 +54,7 @@ locals {
   trigger_name       = var.unique_names ? "zionai-summary-trigger-${random_id.unique_id.hex}" : "summary-trigger"
   trigger_sa_name    = var.unique_names ? "zionai-summary-trigger-sa-${random_id.unique_id.hex}" : "summary-trigger-sa"
   ocr_processor_name = var.unique_names ? "zionai-summary-ocr-processor-${random_id.unique_id.hex}" : "summary-ocr-processor"
-  bq_dataset_name    = var.unique_names ? "zionai-summary_dataset_${random_id.unique_id.hex}" : "summary_dataset"
+  bq_dataset_name    = var.unique_names ? "zionai_summary_dataset_${random_id.unique_id.hex}" : "summary_dataset"
 }
 
 #-- Cloud Storage buckets --#
