@@ -28,6 +28,11 @@ The architecture for the Zion AI Document Summarization project is streamlined a
 
 ---
 
+## Architecture
+![Document Summarization using Generative AI](https://www.gstatic.com/pantheon/images/solutions/gen_ai_document_summarization_architecture_v1.svg)
+
+---
+
 ## Deployment Information
 
 ### Estimated Deployment Time
