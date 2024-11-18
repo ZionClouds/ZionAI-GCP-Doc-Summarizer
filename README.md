@@ -38,7 +38,7 @@ The architecture for the Zion AI Document Summarization project is streamlined a
 ---
 
 ## Documentation
-- [Zion AI Document Summarization Documentation](https://zion-cloud-solutions/document-summarization)
+- [Zion AI Document Summarization Documentation](https://www.gstatic.com/pantheon/images/solutions/gen_ai_document_summarization_architecture_v1.svg)
 
 ---
 
@@ -53,8 +53,8 @@ The architecture for the Zion AI Document Summarization project is streamlined a
 - **Configuration**: ~1 minute
 - **Deployment**: ~5 minutes
 
-### Cost
-[Cost Details and Estimates](https://zion-cloud-solutions/pricing-calculator)
+<!-- ### Cost
+[Cost Details and Estimates](https://zion-cloud-solutions/pricing-calculator) -->
 
 ---
 
@@ -103,11 +103,26 @@ The service account must have the following roles for provisioning resources:
 
 Enable the following APIs in your Zion AI project for successful deployment:
 
-- Zion Cloud Storage API: `storage-api.zion-cloud-solutions`
+- Google Cloud Storage API: `storage-api.googleapis.com`
 
 ---
 
-## Contributing
+## Security Disclosures
+
+Please see our [security disclosure process](./SECURITY.md).
+
+## Customizing the ZionAI Platform for Your Needs
+
+1. **Frontend Customization**: Use the default minimalist UI or configure it to match specific project needs with ZionAI’s customization options.
+2. **Deployment Workflow**: Utilize the 1-click deployment option or customize the Terraform workflow to support unique app features.
+
+## Example Use Cases
+ZionAI is versatile and can support various AI projects such as:
+- **Custom Recommendation Engines**
+- **Dynamic Content Generators**
+- **Data-driven Interactive Dashboards**
+
+<!-- ## Contributing
 
 Please follow the [Zion Contribution Guidelines](https://zion-cloud-solutions/docs/contributing) for contributions to this project.
 
@@ -115,4 +130,4 @@ Please follow the [Zion Contribution Guidelines](https://zion-cloud-solutions/do
 
 ## Security Disclosures
 
-Refer to our [Security Disclosure Policy](https://zion-cloud-solutions/docs/security) for reporting vulnerabilities.
+Refer to our [Security Disclosure Policy](https://zion-cloud-solutions/docs/security) for reporting vulnerabilities. -->
