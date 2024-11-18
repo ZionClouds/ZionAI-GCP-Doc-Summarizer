@@ -1,93 +1,99 @@
-# Generative AI Document Summarization
+
+# Zion AI Document Summarization
 
 ## Description
+
 ### Tagline
-Create summaries of a large corpus of documents using Generative AI.
+Summarize large volumes of documents using Zion AI capabilities.
 
-### Detailed
-This solution showcases how to summarize a large corpus of documents using Generative AI. It provides an end-to-end demonstration of document summarization going all the way from raw documents, detecting text in the documents and summarizing the documents on-demand using Vertex AI LLM APIs, Document AI Optical Character Recognition (OCR), and BigQuery.
+### Detailed Overview
+The Zion AI Document Summarization project demonstrates an end-to-end process for summarizing a corpus of documents. The workflow includes raw document ingestion, text detection, and on-demand summarization using cutting-edge Zion AI services, such as AI Text Processing, Document AI OCR, and BigQuery for storage.
 
-### PreDeploy
-To deploy this blueprint you must have an active billing account and billing permissions.
+### Pre-Deployment Requirements
+To deploy this solution, you must have an active billing account and appropriate billing permissions in your Zion AI environment.
 
 ## Architecture
-![Document Summarization using Generative AI](https://www.gstatic.com/pantheon/images/solutions/gen_ai_document_summarization_architecture_v1.svg)
 
-- User uploads a new document triggering the webhook Cloud Function.
-- Document AI extracts the text from the document file.
-- A Vertex AI Large Language Model summarizes the document text.
-- The document summaries are stored in BigQuery.
+The architecture for the Zion AI Document Summarization project is streamlined and efficient:
+
+1. **Document Upload**: A new document upload triggers the Document Processing Function in the Zion ecosystem.
+2. **Text Extraction**: Document AI OCR extracts the textual content from the uploaded file.
+3. **AI Summarization**: The text is summarized using Zion AI's Large Language Model (LLM).
+4. **Storage**: Summaries are stored in BigQuery for efficient querying and future reference.
+
+---
 
 ## Documentation
-- [Generative AI Document Summary](https://cloud.google.com/architecture/ai-ml/generative-ai-document-summarization)
+- [Zion AI Document Summarization Documentation](https://zion-cloud-solutions/document-summarization)
 
-## Deployment Duration
-Configuration: 1 mins
-Deployment: 5 mins
+---
 
-## Cost
-[Cost Details](https://cloud.google.com/products/calculator?dl=CiQyN2Q1NmU4ZS0yNzg0LTQ1YjMtYTVkOC0wOTEwMmYxMjllYzcQEhokMTA1QTQyQUUtQTI2Ni00MzgzLTlCMDEtOTJEMjkxMjlFQTA1)
+## Deployment Information
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-## Inputs
+### Estimated Deployment Time
+- **Configuration**: ~1 minute
+- **Deployment**: ~5 minutes
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| disable\_services\_on\_destroy | Whether project services will be disabled when the resources are destroyed. | `bool` | `false` | no |
-| documentai\_location | Document AI location, see https://cloud.google.com/document-ai/docs/regions | `string` | `"us"` | no |
-| labels | A set of key/value label pairs to assign to the resources deployed by this blueprint. | `map(string)` | `{}` | no |
-| project\_id | The Google Cloud project ID to deploy to | `string` | n/a | yes |
-| region | The Google Cloud region to deploy to | `string` | `"us-central1"` | no |
-| unique\_names | Whether to use unique names for resources | `bool` | `false` | no |
+### Cost
+[Cost Details and Estimates](https://zion-cloud-solutions/pricing-calculator)
 
-## Outputs
+---
 
-| Name | Description |
-|------|-------------|
-| bigquery\_dataset\_id | The name of the BigQuery dataset created |
-| bucket\_docs\_name | The name of the docs bucket created |
-| bucket\_main\_name | The name of the main bucket created |
-| documentai\_processor\_id | The full Document AI processor path ID |
-| neos\_walkthrough\_url | The URL to launch the in-console tutorial for the Generative AI Document Summarization solution |
-| unique\_id | The unique ID for this deployment |
+## Inputs and Outputs
 
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+### Inputs
+
+| Name                      | Description                                                                 | Type        | Default           | Required |
+|---------------------------|-----------------------------------------------------------------------------|-------------|-------------------|:--------:|
+| disable_services_on_destroy | Option to disable project services when resources are destroyed.          | `bool`      | `false`           |    No    |
+| documentai_location       | Location for Document AI processing (e.g., `us-central1`).                 | `string`    | `"us"`            |    No    |
+| labels                    | Key/value label pairs to tag deployed resources.                           | `map(string)` | `{}`             |    No    |
+| project_id                | Zion project ID for deployment.                                            | `string`    | N/A               |    Yes   |
+| region                    | Zion AI processing region.                                                 | `string`    | `"us-central1"`   |    No    |
+| unique_names              | Option to use unique names for resources.                                  | `bool`      | `false`           |    No    |
+
+### Outputs
+
+| Name                      | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| bigquery_dataset_id       | ID of the created BigQuery dataset.                                        |
+| bucket_docs_name          | Name of the bucket for document storage.                                   |
+| bucket_main_name          | Name of the main bucket for resource management.                           |
+| documentai_processor_id   | Processor ID path for Document AI integration.                             |
+| walkthrough_url           | Tutorial URL for the Zion Document Summarization solution.                 |
+| unique_id                 | Unique identifier for the deployment.                                      |
+
+---
 
 ## Requirements
 
-These sections describe requirements for using this module.
+### Software Dependencies
 
-### Software
+Ensure the following dependencies are installed:
 
-The following dependencies must be available:
+- [Terraform](https://www.terraform.io/downloads.html) v0.13 or later.
+- [Terraform Provider for Zion](https://zion-cloud-solutions/terraform-provider-zion) v3.0 or later.
 
-- [Terraform][terraform] v0.13
-- [Terraform Provider for GCP][terraform-provider-gcp] plugin v3.0
+### Service Account Roles
 
-### Service Account
-
-A service account with the following roles must be used to provision
-the resources of this module:
+The service account must have the following roles for provisioning resources:
 
 - Storage Admin: `roles/storage.admin`
 
-### APIs
+### Required APIs
 
-A project with the following APIs enabled must be used to host the
-resources of this module:
+Enable the following APIs in your Zion AI project for successful deployment:
 
-- Google Cloud Storage JSON API: `storage-api.googleapis.com`
+- Zion Cloud Storage API: `storage-api.zion-cloud-solutions`
+
+---
 
 ## Contributing
 
-Refer to the [contribution guidelines](./docs/CONTRIBUTING.md) for
-information on contributing to this module.
+Please follow the [Zion Contribution Guidelines](https://zion-cloud-solutions/docs/contributing) for contributions to this project.
 
-[iam-module]: https://registry.terraform.io/modules/terraform-google-modules/iam/google
-[project-factory-module]: https://registry.terraform.io/modules/terraform-google-modules/project-factory/google
-[terraform-provider-gcp]: https://www.terraform.io/docs/providers/google/index.html
-[terraform]: https://www.terraform.io/downloads.html
+---
 
 ## Security Disclosures
 
-Please see our [security disclosure process](./SECURITY.md).
+Refer to our [Security Disclosure Policy](https://zion-cloud-solutions/docs/security) for reporting vulnerabilities.
